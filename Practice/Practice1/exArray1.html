@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS Examples Array</title>
+    </head>
+    <body>
+        <h1>Examples Array</h1>
+        <hr>
+        <h2>Countries list</h2>
+        <!-- Список государств - выводим в параграф -->
+        <!-- Смотри презинтацию -->
+        <div id="Mycontent"></div>
+        <hr>
+        <!-- List countries -->
+        <div id="content">
+            <h2 id="mH1"></h2>
+        </div>
+        <hr>
+        <!-- List cities -->
+        <div id="intro">
+            <h2 id="mH2"></h2>
+                <ul id="list"></ul>
+        </div>
+        <script>
+        //Praktika1 слайд 11
+            var countries =["Eesti","Russia","Norway","Germany"];
+        // функция печать массива
+            function printCountries(countries){
+                for (var i=0; i<countries.length;i++){
+                    var p=document.createElement('p');
+                    p.innerHTML = countries[i];//одно государство
+                    document.getElementById('Mycontent').appendChild(p);
+                }//end for
+            }//ends function
+
+            //вызов функции
+            printCountries(countries);
+
+        //------------------------------------------------------------------------------------------------    
+        //Praktika2
+        //Array
+            var country = ['Eesti','Russia','Norway','Germany','France','Китай','Испания'];//список стран
+            var cities = ['Tallin','Johvi','Moscow','S-Peterburg','Oslo','Berlin','Paris'];//города
+            var myHeading1="Array - List countries";//заголовок
+            var myHeading2="Array - List cities";//заголовок
+
+        //1. --------- список стран
+            function printCountry(dataCountry){
+                //dataCountry - получение данных в виде набора - массива
+                for(var i=0; i<dataCountry.length;i++){
+                    var string = document.createElement('span');//создать элемент span
+                    string.innerHTML = dataCountry[i]+'<br>';//добавили одно гос-во в строку вывода
+                    document.getElementById('content').appendChild(string);//вывести на страницу
+                }//end for
+            }//end function
+
+        //2. --------- список городов - List
+            function printListCity(dataList){
+                for(var i=0; i<dataList.length;i++){
+                    var mLi = document.createElement('li');//создать список <li>
+                    mLi.innerHTML=dataList[i];//записываем в список
+                    document.getElementById('list').appendChild(mLi);//выводим на страницу
+                }
+            }
+
+        //----------Вызов функций печати списков
+            document.getElementById('mH1').innerHTML=myHeading1;
+            printCountry(country);// 1. вызываем функции печати - список стран
+            document.getElementById('mH2').innerHTML=myHeading2;
+            printListCity(cities);// 2. вызываем функцию печати - список городов - List
+        </script>
+    </body>
+</html>

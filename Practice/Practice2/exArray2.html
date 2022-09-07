@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS Array Массив</title>
+    </head>
+    <body>
+        <h1>Список государств</h1>
+        <hr>
+        <div id="content"></div>
+        <!-- ------------ -->
+        <script>
+            //массив
+            var country=[
+                {   state:'Estonia',
+                    capital:'Tallinn',
+                    language:'estonian'
+                },
+                {   state:'Russia',
+                    capital:'Moscow',
+                    language:'russian'
+                },
+                {   state:'Norway',
+                    capital:'Oslo',
+                    language:'norwegian'
+                },
+                {   state:'Germany',
+                    capital:'Berlin',
+                    language:'germany'
+                }
+            ];
+        //-------------------------------
+            function printOneCountry(oneCountry){
+                var container = document.createElement('p');
+                var text = oneCountry.state + ' - '+ oneCountry.capital;
+                text+=' (official language: '+oneCountry.language+' )';
+                //-----------------
+                container.innerHTML =text;
+                document.getElementById('content').appendChild(container);
+            }//end function
+
+        //---------------- вызов функции
+        for(var i=0; i<country.length;i++){
+            printOneCountry(country[i])
+        }
+        </script>
+    </body>
+</html>

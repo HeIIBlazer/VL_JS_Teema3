@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS Array</title>
+    </head>
+    <body>
+        <h2>Список государств и городов</h2>
+        <div id="content"></div>
+        
+        <script>
+            var country = [
+                {
+                    state:'Estonia',
+                    cities:['Johvi','K-J','Narva']
+                },
+                {
+                    state:'Russia',
+                    cities:['Калуга','Тверь','С-Петербург']
+                },
+                {
+                    state:'Norway',
+                    cities:['Oslo','Bergen']
+                },
+                {
+                    state:'Germany',
+                    cities:['Munich','Hamburg']
+                },
+            ];
+            //-----function print one state
+            function printOneState(myCountry) {
+                var divN = document.createElement('div');
+                divN.innerHTML ='<h3>'+ myCountry.state+'</h3>';//добавим заголовки
+                document.getElementById('content').appendChild(divN);
+                //------------cities
+                var text = '';//соберем список городов
+                for(var i=0; i<myCountry.cities.length;i++){
+                    text+=myCountry.cities[i]+'<br>';
+                }//for
+
+                //---Вывод всего списка городов на страницу
+                var newP=document.createElement('p');
+                    newP.innerHTML=text;// в параграф добавим тескт
+                    divN.appendChild(newP);
+            }//function
+            //----write array - читаем массив
+                for(var i=0;i<country.length;i++){
+                    printOneState(country[i])//--выводим по одноьй записи
+                }
+        </script>     
+    </body>
+</html>
