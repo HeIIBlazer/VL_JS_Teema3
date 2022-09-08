@@ -37,7 +37,7 @@ var students =[
 ];
 
 //--------------- обработка
-//функция мечати - вывод одной записи
+//функция печати - вывод одной записи
 function printStudent(student){
     var container = document.createElement('div');
     container.style.float='left';
